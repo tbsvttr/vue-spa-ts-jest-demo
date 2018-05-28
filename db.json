@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "author": "Michaela",
+      "title": "Vogelbauer",
+      "id": 34
+    },
+    {
+      "author": "Tobias",
+      "title": "Vetternwirtschaft",
+      "id": 35
+    }
+  ]
+}

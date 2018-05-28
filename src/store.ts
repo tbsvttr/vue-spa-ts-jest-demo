@@ -1,16 +1,15 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from "vue";
+import Vuex, { Store, StoreOptions } from "vuex";
+import { getStoreAccessors } from "vuex-typescript";
+import { posts } from "./store/posts";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {
-
+export const storeOptions: StoreOptions<IRootState> = {
+  modules: {
+    posts
   },
-  mutations: {
+  strict: true
+};
 
-  },
-  actions: {
-
-  },
-});
+export const store: Store<IRootState> = new Vuex.Store(storeOptions);

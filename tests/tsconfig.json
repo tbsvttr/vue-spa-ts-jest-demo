@@ -1,0 +1,9 @@
+{
+  // This is used by `ts language service` and testing.
+  // Includes test files and global types.
+  "compilerOptions": {
+    "types": ["jest"]
+  },
+  "extends": "../tsconfig.json",
+  "include": [ "./**/*.ts", "../types/**/*.ts" ]
+}
