@@ -3,7 +3,6 @@
     <div class="navbar-brand has-text-centered">
       <router-link class="navbar-item" to="/">Home</router-link>
       <router-link class="navbar-item" to="/posts">Posts</router-link>
-      <router-link class="navbar-item" to="/about">About</router-link>
     </div>
   </nav>
 </template>

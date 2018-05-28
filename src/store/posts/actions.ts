@@ -1,3 +1,4 @@
+import { errorHandler } from "@/errors";
 import Axios, { AxiosError, AxiosResponse } from "axios";
 import { ActionContext, ActionTree } from "vuex";
 
@@ -8,7 +9,7 @@ export const actions: ActionTree<IPostsState, IRootState> = {
         context.commit("storeAll", response.data);
       },
       (error: AxiosError) => {
-        console.error(error);
+        errorHandler(error);
       }
     );
   },
@@ -21,7 +22,7 @@ export const actions: ActionTree<IPostsState, IRootState> = {
         context.commit("storeOne", response.data);
       },
       (error: AxiosError) => {
-        console.error(error);
+        errorHandler(error);
       }
     );
   },
@@ -34,7 +35,7 @@ export const actions: ActionTree<IPostsState, IRootState> = {
         context.dispatch("readAll");
       },
       (error: AxiosError) => {
-        console.error(error);
+        errorHandler(error);
       }
     );
   },
@@ -47,7 +48,7 @@ export const actions: ActionTree<IPostsState, IRootState> = {
         context.commit("resetOne");
       },
       (error: AxiosError) => {
-        console.error(error);
+        errorHandler(error);
       }
     );
   },
@@ -60,7 +61,7 @@ export const actions: ActionTree<IPostsState, IRootState> = {
         context.commit("resetOne");
       },
       (error: AxiosError) => {
-        console.error(error);
+        errorHandler(error);
       }
     );
   }
