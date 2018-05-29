@@ -1,16 +1,17 @@
 module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "vue"],
+  moduleNameMapper: {
+    "^!/(.*)$": "<rootDir>/$1",
+    "^%/(.*)$": "<rootDir>/tests/$1",
+    "^@/(.*)$": "<rootDir>/src/$1"
+  },
   transform: {
-    "^.+\\.vue$": "vue-jest",
     ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$":
       "jest-transform-stub",
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.vue$": "vue-jest"
   },
-  moduleNameMapper: {
-    "^@/(.*)$": "<rootDir>/src/$1",
-    "^%/(.*)$": "<rootDir>/tests/$1",
-    "^!/(.*)$": "<rootDir>/$1"
-  },
+
   snapshotSerializers: ["jest-serializer-vue"],
   testMatch: [
     "<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))"
