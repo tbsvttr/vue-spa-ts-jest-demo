@@ -54,12 +54,18 @@ describe("Posts.vue", () => {
     wrapper.setData({ showModal: false });
   });
 
-  it("should dispatch action when created", async () => {
+  it("should have the number of articles equal to the number of faked post entries.", async () => {
     // Setup
     await flushPromises();
     // Test
     expect(actions.readAll).toHaveBeenCalled();
-    // expect(wrapper.html()).toBe("");
+  });
+
+  it("should dispatch action when created", async () => {
+    // Setup
+    await flushPromises();
+    // Test
+    expect(wrapper.findAll("article").length).toBe(items.length);
   });
 
   it("Click .update-post", async () => {
